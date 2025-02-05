@@ -18,8 +18,8 @@ customers = Customer.create([
   
   # Create toppings
   toppings = Topping.create([
-    { name: "Mushrooms", price: 30 },
-    { name: "Olives", price: 40 }
+    { name: "Mushrooms", price: 30, category: "non_vegetarian" },
+    { name: "Olives", price: 40, category: "non_vegetarian" }
   ])
   
   # Create inventory for each item

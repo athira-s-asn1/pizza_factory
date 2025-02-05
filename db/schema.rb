@@ -10,10 +10,18 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2025_02_05_062713) do
+ActiveRecord::Schema.define(version: 2025_02_05_073316) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "customers", force: :cascade do |t|
+    t.string "name"
+    t.string "email"
+    t.string "phone"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
 
   create_table "inventories", force: :cascade do |t|
     t.string "item_name"
@@ -41,6 +49,8 @@ ActiveRecord::Schema.define(version: 2025_02_05_062713) do
     t.string "status", default: "pending"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.bigint "customer_id", null: false
+    t.index ["customer_id"], name: "index_orders_on_customer_id"
   end
 
   create_table "pizzas", force: :cascade do |t|
@@ -71,4 +81,5 @@ ActiveRecord::Schema.define(version: 2025_02_05_062713) do
   add_foreign_key "order_items", "orders"
   add_foreign_key "order_items", "pizzas"
   add_foreign_key "order_items", "sides"
+  add_foreign_key "orders", "customers"
 end
