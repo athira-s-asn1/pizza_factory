@@ -49,7 +49,6 @@ class OrderService
   
     Rails.logger.debug("Order items: #{order.order_items.inspect}")
   
-    # Check inventory only after all validations pass
     return { error: "Inventory shortage or invalid order" } unless validate_inventory(order)
   
     # Save the order and update inventory
