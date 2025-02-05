@@ -31,19 +31,16 @@ git clone https://github.com/your-username/pizza-factory.git
 cd pizza-factory
 
 Install Dependencies
-```bash
 bundle install
+
 Set up the Database
-```bash
 rails db:create db:migrate db:seed
 Start the Server
-```bash
 
 rails server
 Running Tests
 Run the RSpec test suite to ensure everything works correctly:
 
-```bash
 
 bundle exec rspec
 API Endpoints
