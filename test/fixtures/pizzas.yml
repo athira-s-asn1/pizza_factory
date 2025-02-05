@@ -1,0 +1,15 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  name: MyString
+  category: MyString
+  regular_price: 9.99
+  medium_price: 9.99
+  large_price: 9.99
+
+two:
+  name: MyString
+  category: MyString
+  regular_price: 9.99
+  medium_price: 9.99
+  large_price: 9.99
